@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario de Matrícula Escolar</title>
+  <link rel="stylesheet" href="http://localhost/wp-content/uploads/custom-css-js/form.css"/>
+<style>
+body {
+      font-family: sans-serif;
+      background-color: white;
+    }
+form {
+      font-family: arial;
+      background-color: lightblue;
+      padding: 30px;
+      border-radius: 10px;
+      margin: auto;
+      box-shadow: 0 0 10px grey;
+      text-align: justify;
+    }
+h2 {
+      color: black;
+      border-bottom: 2px solid darkblue;
+      padding-bottom: 5px;
+      margin-top: 2rem;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+input {
+      font-size: 20px;
+    }
+input[type="submit"] {
+      background-color: darkblue;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+input[type="submit"]:hover {
+      background-color: darkred;
+    }
+</style>
+</head>
+<body>
+  <form action="/wp-content/themes/twentytwentyfive/formulario.php" method="post" enctype="multipart/form-data" autocomplete="on">
+
+
+    <h2>Datos del Alumno</h2>
+
+    <label>Nombre:</label>
+    <input type="text" name="alumno_nombre" style="width:200px" autofocus required>
+  
+    <label>Apellidos:</label>
+    <div class="flex">
+    <input type="text" name="alumno_apellido1" style="width:200px" required>
+    <input type="text" name="alumno_apellido2" style="width:200px" required>
+   </div>
+
+  <label>Documento de identidad:</label>
+  <input type="text" name="alumno_dni" style="width:200px" required>
+
+  <label>Fecha de nacimiento:</label>
+  <div class="flex">
+    <input type="number" name="alumno_nac_dia" min="1" max="31" style="width:50px" required>
+    <input type="number" name="alumno_nac_mes" min="1" max="12" style="width:50px" required>
+    <input type="number" name="alumno_nac_anio" min="1900" max="2025" style="width:80px" required>
+  </div>
+
+  <label>Lugar de nacimiento:</label>
+  <input type="text" name="alumno_lugar" style="width:200px" required>
+
+  <label>Nacionalidad:</label>
+  <input type="text" name="alumno_nacionalidad" style="width:200px" required>
+
+  <label>Domicilio:</label>
+  <input type="text" name="alumno_domicilio" required>
+
+  <label>Localidad:</label>
+  <input type="text" name="alumno_localidad" style="width:200px" required>
+
+  <label>Código postal:</label>
+  <input type="text" name="alumno_cp" style="width:100px" required>
+
+  <label>Sexo:</label>
+  <input type="radio" name="alumno_sexo" value="Masculino" required> Masculino
+  <input type="radio" name="alumno_sexo" value="Femenino" required> Femenino
+
+  <label>Observaciones:</label>
+  <input type="text" name="observaciones" placeholder="Medicación del alumno, cuidados especiales, etc.">
+
+  <h2>Datos del Tutor Legal</h2>
+
+  <label>Nombre:</label>
+  <input type="text" name="tutor_nombre" style="width:200px" required>
+
+  <label>Apellidos:</label>
+  <div class="flex">
+    <input type="text" name="tutor_apellido1" style="width:200px" required>
+    <input type="text" name="tutor_apellido2" style="width:200px" required>
+  </div>
+
+  <label>Documento de identidad:</label>
+  <input type="text" name="tutor_dni" style="width:200px" required>
+
+  <label>Fecha de nacimiento:</label>
+  <div class="flex">
+    <input type="number" name="tutor_nac_dia" min="1" max="31" style="width:50px" required>
+    <input type="number" name="tutor_nac_mes" min="1" max="12" style="width:50px" required>
+    <input type="number" name="tutor_nac_anio" min="1900" style="width:80px" max="2025" required>
+  </div>
+
+  <label>Nacionalidad:</label>
+  <input type="text" name="tutor_nacionalidad" style="width:200px" required>
+
+  <label>Domicilio:</label>
+  <input type="text" name="tutor_domicilio" required>
+
+  <label>Localidad:</label>
+  <input type="text" name="tutor_localidad" style="width:200px" required>
+
+  <label>Código postal:</label>
+  <input type="text" name="tutor_cp" style="width:100px" required>
+
+  <label>Sexo:</label>
+  <input type="radio" name="tutor_sexo" value="Masculino" required> Masculino
+  <input type="radio" name="tutor_sexo" value="Femenino" required> Femenino
+
+  <label>Teléfono de contacto:</label>
+  <input type="text" name="tutor_telefono" style="width:200px" required>
+
+  <label>Correo electrónico:</label>
+  <input type="text" name="tutor_email" required>
+
+  <h2>Estudios Anteriores</h2>
+
+  <label>Últimos estudios realizados:</label>
+  <input type="text" name="estudios_anteriores">
+
+  <label>Fecha de realización:</label>
+  <div class="flex">
+    <input type="number" name="estudios_dia" min="1" max="31" style="width:50px">
+    <input type="number" name="estudios_mes" min="1" max="12" style="width:50px">
+    <input type="number" name="estudios_anio" min="1900" max="2025" style="width:80px">
+  </div>
+
+  <label>Centro educativo:</label>
+  <input type="text" name="centro_estudios">
+
+  <h2>Estudios Solicitados</h2>
+  <label>Curso a matricular:</label>
+
+  <select name="curso_solicitado" required>
+    <option selected>Selecciona un curso</option>
+    <optgroup label="ESO">
+    <option value="1ºESO">1ºESO</option>
+    <option value="2ºESO">2ºESO</option>
+    <option value="3ºESO">3ºESO</option>
+    <option value="4ºESO">4ºESO</option>
+    <optgroup label="Bachiller">
+    <option value="1ºBachiller">1ºBachiller</option>
+    <option value="2ºBachiller">2ºBachiller</option>
+    <optgroup label="DAW">
+    <option value="1ºDAW">1ºDAW</option>
+    <option value="2ºDAW">2ºDAW</option>
+    <optgroup label="DAM">
+    <option value="1ºDAM">1ºDAM</option>
+    <option value="2ºDAM">2ºDAM</option>
+    <optgroup label="ASIR">
+    <option value="1ºASIR">1ºASIR</option>
+    <option value="2ºASIR">2ºASIR</option>
+  </select>
+
+  <label>Fotografía tamaño carnet:</label>
+  <input type="file" name="foto" accept="image/*" required>
+
+  <h2>Consentimiento</h2>
+  <label><input type="checkbox" name="consentimiento_datos" required> Acepto que el centro gestione la información proporcionada y cedo mis derechos sobre la misma.</label>
+  <label><input type="checkbox" name="consentimiento_imagenes"> Acepto que el centro publique fotografías e información del estudiante en la página web del centro y sus redes sociales, así como en distintas revistas o artículos referidos a la educación y actividades escolares.</label>
+  <label><input type="checkbox" name="declaracion_veracidad" required> Certifico que las declaraciones en las respuestas son verídicas y tengo entendido que cualquier falsedad puede ser motivo de anulación de la inscripción.</label>
+
+  <input type="submit" value="Enviar Solicitud">
+  </form>
+
+</body>
+</html>
