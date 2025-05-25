@@ -1,0 +1,64 @@
+body {
+  margin-top: 0;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+.botones {
+  margin-top: -300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px;
+  text-indent: -10px;
+}
+
+.boton {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  overflow: hidden;
+}
+
+.boton a {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgb(0, 0, 0, 0.5);
+  color: #f5f5f5;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.boton:hover {
+  transform: scale(110%);
+}
+
+.boton a:hover {
+  background: rgb(0, 0, 0, 1);
+}
+
+.admin {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.admin a {
+  color: #444;
+  text-decoration: none;
+}
+
+.admin a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
